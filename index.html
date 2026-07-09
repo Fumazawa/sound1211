@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>音源聴取</title>
+
+<style>
+
+body{
+    font-family: sans-serif;
+    margin: 50px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+h1{
+    font-size: 28px;
+}
+
+button{
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#result{
+    display: none;
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>音源聴取</h1>
+
+<p>
+以下のボタンをクリックして音を再生してください．
+</p>
+
+<button id="playButton">音源</button>
+
+<p>
+※ 実験中は音量の調整を変更しないで下さい．
+</p>
+
+<div id="result">
+    番号：23
+    <br>
+    この番号をGoogle Formsに入力してください
+</div>
+
+<audio id="audio">
+    <source src="13piano_mid_3.wav" type="audio/wav">
+</audio>
+
+<script>
+
+const audio = document.getElementById("audio");
+
+document.getElementById("playButton").onclick = () => {
+
+    document.getElementById("playButton").disabled = true;
+
+    audio.play();
+
+};
+
+audio.addEventListener("ended", () => {
+
+    document.getElementById("result").style.display = "block";
+
+});
+
+</script>
+
+</body>
+</html>
